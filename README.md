@@ -99,10 +99,10 @@ The Phugoid branches start near the imaginary axis and curve INTO the RHP. They 
 
 | K | Rise Time | Settling Time | Overshoot | SS Pitch | Phugoid Poles |
 |---|---|---|---|---|---|
-| 0.10 | 3.42 s | 13.23 s | 18.15% | 2.465° (SSE=50.7%) | −0.2181 ± 0.3967j |
-| 0.20 | — | 28.62 s | 42.72% | 4.202° | −0.1413 ± 0.4935j |
-| 0.35 | — | 72.63 s | 82.01% | 6.505° | −0.0533 ± 0.5835j |
-| 0.40 | — | 141.93 s | 95.64% | 7.251° | −0.0282 ± 0.6062j |
+| 0.10 | 3.42 s | 13.23 s | 18.15% | 2.1° (SSE=58%) | −0.2181 ± 0.3967j |
+| 0.20 | 2.3184 s | 28.62 s | 42.72% | 2.95° | −0.1413 ± 0.4935j |
+| 0.35 | 1.6103 s  | 72.63 s | 82.01% | 3.55° | −0.0533 ± 0.5835j |
+| 0.40 | 1.4667 s | 141.93 s | 95.64% | 3.65° | −0.0282 ± 0.6062j |
 
 **Every gain increase worsens performance.** Phugoid pole real parts move from −0.2181 toward −0.0282 — closer to the imaginary axis, less damped, more oscillatory. The best available gain is K = 0.1.
 
@@ -113,8 +113,8 @@ The Phugoid branches start near the imaginary axis and curve INTO the RHP. They 
 | Controller | Rise Time | Settling Time | Overshoot | Undershoot | SS Error |
 |---|---|---|---|---|---|
 | Open Loop | 7.56 s | 13.93 s | 0.23% | 3.16% | Very large |
-| **Root Locus K=0.1** | **3.42 s** | **13.23 s** | **18.15%** | **5.49%** | **50.7%** |
-| Root Locus K=0.4 | — | 141.93 s | 95.64% | — | 27% |
+| **Root Locus K=0.1** | **3.42 s** | **13.23 s** | **18.15%** | **5.49%** | **58%** |
+| Root Locus K=0.4 | 1.4667 s | 141.93 s | 95.64% | 12.9192 % | 27% |
 | PID — pidtune() | 1.99 s | 19.49 s | 3.39% | 18.12% | **0% ✅** |
 
 **Why PID outperforms root locus gain selection:** The integral term in PID drives SSE to zero — a capability that no proportional gain can provide. Root locus gain selection can only place poles; it cannot add controller dynamics. PID adds the integrator 1/s which changes what is achievable.
@@ -131,7 +131,7 @@ The Phugoid branches start near the imaginary axis and curve INTO the RHP. They 
 
 **4.** Every gain increase worsens performance on this plant — the opposite of minimum-phase plants where increasing gain improves speed up to a stability limit.
 
-**5.** Best available gain K = 0.1 still has 50.7% steady-state error. PID eliminates this via integral action; root locus gain alone cannot.
+**5.** Best available gain K = 0.1 still has 58% steady-state error. PID eliminates this via integral action; root locus gain alone cannot.
 
 **6.** The root locus must be reshaped using a lead compensator before gain selection becomes meaningful. This is the subject of Project 06.
 
