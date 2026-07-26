@@ -158,7 +158,7 @@ This is what distinguishes an engineer from a button-clicker — understanding w
 ✅ Project 02 — DC Motor Modeling
 ✅ Project 03 — PID Speed Control
 ✅ Project 04 — Aircraft Pitch Control
-✅ Project 05 — Root Locus Design ← YOU ARE HERE
+✅ Project 05 — Root Locus Design 
 
 → Project 06 — Lead Compensator Design
 → Project 07 — Bode & Frequency Response
@@ -194,4 +194,10 @@ This project is released under the MIT License.
 
 ## Project Cover
 
-![Project Cover](Figures/ProjectCover.png)
+![Project Cover](Figures/Project_Cover.png)
+
+--- 
+## Root Locus
+
+![Root Locus](Figures/Root_Locus.png)
+
